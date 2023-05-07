@@ -9,6 +9,7 @@ public class playermovement : MonoBehaviour
     private Rigidbody2D body;
     private Animator anim;
     private BoxCollider2D boxCollider;
+    private float wallJumpCooldown; 
 
     private void Awake()
     {
@@ -24,7 +25,7 @@ public class playermovement : MonoBehaviour
     {
 
         float horizontalInput = Input.GetAxis("Horizontal");
-        body.velocity = new Vector2(horizontalInput * speed, body.velocity.y);
+        
 
         //flipping left-right
 
@@ -34,14 +35,29 @@ public class playermovement : MonoBehaviour
             transform.localScale = new Vector3(-1, 1, 1);
 
 
-        if (Input.GetKey(KeyCode.Space)&& isGrounded())
-            Jump();
-
         //set animator parameters
         anim.SetBool("run", horizontalInput != 0);
         anim.SetBool("grounded", isGrounded());
 
-        print(onWall());
+
+        //wall jumping logic
+        if (wallJumpCooldown < 0.2f)
+        {
+            if (Input.GetKey(KeyCode.Space) && isGrounded())
+                Jump();
+            body.velocity = new Vector2(horizontalInput * speed, body.velocity.y);
+
+            if (onWall() && !isGrounded())
+            {
+                body.gravityScale = 0;
+                body.velocity = Vector2.zero;
+            }
+            else
+                body.gravityScale = 3;
+        }
+        else
+            wallJumpCooldown += Time.deltaTime;
+           
 
     }
 
