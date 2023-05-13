@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
-    [SerializeField]private float startingHealth;
-    private float currentHealth;
+    [SerializeField] private float startingHealth;
+    public float currentHealth { get; private set; }
 
     private void Awake()
     {
