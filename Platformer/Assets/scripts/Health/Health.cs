@@ -31,18 +31,12 @@ public class Health : MonoBehaviour
                 GetComponent<playermovement>().enabled = false;
                 dead = true;
             }
-            
         }
-
-
     }
-
-
-
-
-
-
-
+    public void AddHealth(float _value)
+    {
+        currentHealth = Mathf.Clamp(currentHealth + _value, 0, startingHealth);
+    }
 
 
 

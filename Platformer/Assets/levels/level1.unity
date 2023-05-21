@@ -9923,6 +9923,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99b067cb71f291f48b20e285fed81e70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healthValue: 1
 --- !u!212 &1939792207
 SpriteRenderer:
   m_ObjectHideFlags: 0
