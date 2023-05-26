@@ -32,7 +32,7 @@ public class Enemy_Sideways : MonoBehaviour
         {
             if (transform.position.x < rightEdge)
             {
-                transform.position = new Vector3(transform.position.x + speed * Time.deltaTime, transform.position.y, transform.position.z);
+                transform.position = new Vector3(transform.position.x + (speed * Time.deltaTime), transform.position.y, transform.position.z);
             }
              else
                  movingLeft = true;
@@ -43,7 +43,7 @@ public class Enemy_Sideways : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-            collision.GetComponent<Health>().takeDamage(damage);
+            collision.GetComponent<Health>().TakeDamage(damage);
         }
     }
 
