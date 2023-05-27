@@ -4961,6 +4961,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingHealth: 3
+  iFramesDuration: 1
+  numberOfFlashes: 3
 --- !u!1 &980139924
 GameObject:
   m_ObjectHideFlags: 0
@@ -10822,18 +10824,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5910422402222844226, guid: a501f9664b63fad45858c69a2669620d, type: 3}
-      propertyPath: m_FlipX
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5910422402222844226, guid: a501f9664b63fad45858c69a2669620d, type: 3}
-      propertyPath: m_FlipY
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5910422402222844226, guid: a501f9664b63fad45858c69a2669620d, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5910422402222844227, guid: a501f9664b63fad45858c69a2669620d, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -10881,10 +10871,6 @@ PrefabInstance:
     - target: {fileID: 5910422402222844286, guid: a501f9664b63fad45858c69a2669620d, type: 3}
       propertyPath: m_Name
       value: Saw
-      objectReference: {fileID: 0}
-    - target: {fileID: 5910422402222844286, guid: a501f9664b63fad45858c69a2669620d, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a501f9664b63fad45858c69a2669620d, type: 3}
