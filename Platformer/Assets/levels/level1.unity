@@ -4961,8 +4961,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingHealth: 3
-  iFramesDuration: 1
-  numberOfFlashes: 3
 --- !u!1 &980139924
 GameObject:
   m_ObjectHideFlags: 0
@@ -10826,11 +10824,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5910422402222844226, guid: a501f9664b63fad45858c69a2669620d, type: 3}
       propertyPath: m_FlipX
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5910422402222844226, guid: a501f9664b63fad45858c69a2669620d, type: 3}
       propertyPath: m_FlipY
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5910422402222844226, guid: a501f9664b63fad45858c69a2669620d, type: 3}
       propertyPath: m_Enabled
@@ -10886,7 +10884,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5910422402222844286, guid: a501f9664b63fad45858c69a2669620d, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a501f9664b63fad45858c69a2669620d, type: 3}
