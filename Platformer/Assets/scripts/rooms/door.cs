@@ -11,9 +11,19 @@ public class door : MonoBehaviour
         if (collision.tag == "Player")
         {
             if (collision.transform.position.x < transform.position.x)
+            {
+
                 cam.MovetoNewRoom(nextRoom);
+                nextRoom.GetComponent<Room>().ActivateRoom(true);
+                previousRoom.GetComponent<Room>().ActivateRoom(false);
+            }
             else
+            {
                 cam.MovetoNewRoom(previousRoom);
+                previousRoom.GetComponent<Room>().ActivateRoom(true);
+                nextRoom.GetComponent<Room>().ActivateRoom(false);
+            }
+                
         }
     }
    private void Awake()
