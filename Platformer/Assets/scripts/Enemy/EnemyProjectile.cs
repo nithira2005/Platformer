@@ -8,7 +8,7 @@ public class EnemyProjectile : Enemydamage
     public void ActivateProjectile()
     {
         lifetime = 0;
-        gameObject.SetActive(false);
+        gameObject.SetActive(true);
 
     }
     private void Update()
@@ -23,6 +23,7 @@ public class EnemyProjectile : Enemydamage
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        
+        base.OnTriggerEnter2D(collision);
+        gameObject.SetActive(false); //deactivated the arrow
     }
 }
