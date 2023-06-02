@@ -1,18 +1,37 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Arrowtrap : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private float attackCooldown;
+    [SerializeField] private Transform firepoint;
+    [SerializeField] private GameObject[] fireballs;
+    private float cooldownTimer;
 
-    // Update is called once per frame
-    void Update()
+    private void Attack()
     {
+        cooldownTimer = 0;
+
+        fireballs[FindFireball()].transform.position = firepoint.position;
+        fireballs[FindFireball()].GetComponent<EnemyProjectile>().setDirection(Mathf.Sign(transform.localScale.x));
+    }
+    private int FindFireball()
+    {
+        for (int i = 0; i < fireballs.Length; i++)
+        {
+            if (!fireballs[i].activeInHierarchy)
+                return i;
+        }
+        return 0;
+    }
+    private void Update()
+    {
+        cooldownTimer += Time.deltaTime;
+         
+        if (cooldownTimer >= attackCooldown)
+           Attack();
         
     }
 }
+
+
+
