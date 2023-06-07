@@ -10,8 +10,6 @@ public class projectiles : MonoBehaviour
     private Animator anim;
     private BoxCollider2D boxCollider;
     
-
-
     private void Awake()
     {
         anim = GetComponent<Animator>();
@@ -48,16 +46,11 @@ public class projectiles : MonoBehaviour
 
         transform.localScale = new Vector3(localScaleX, transform.localScale.y, transform.localScale.z);
 
-   
     }
     private void Deactivate()
     {
         gameObject.SetActive(false);
 
     }
-
-
-
-
 
 }
