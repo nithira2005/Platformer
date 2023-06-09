@@ -3,6 +3,7 @@ using UnityEngine;
 public class lilbro : MonoBehaviour
 {
     [SerializeField] private float attackCooldown;
+    [SerializeField] private float range;
     [SerializeField] private int damage;
     [SerializeField]private BoxCollider2D boxCollider;
     [SerializeField] private LayerMask playerLayer;
@@ -22,13 +23,13 @@ public class lilbro : MonoBehaviour
     }
      private bool PlayerInsight()
      {
-        RaycastHit2D hit = Physics2D.BoxCast(boxCollider.bounds.center, boxCollider.bounds.size, 0, Vector2.left, 0, playerLayer);
+        RaycastHit2D hit = Physics2D.BoxCast(boxCollider.bounds.center + transform.right * range, boxCollider.bounds.size, 0, Vector2.left, 0, playerLayer);
 
         return hit.collider != null;
      }
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawWireCube(boxCollider.bounds.center, boxCollider.bounds.size);
+        Gizmos.DrawWireCube(boxCollider.bounds.center+transform.right*range, boxCollider.bounds.size);
     }
 }
