@@ -10,6 +10,13 @@ public class lilbro : MonoBehaviour
     [SerializeField] private LayerMask playerLayer;
     private float cooldownTimer = Mathf.Infinity;
 
+    private Animator anim;
+
+    private void Awake()
+    {
+        anim = GetComponent<Animator>(); 
+    }
+
     private void Update()
     {
         cooldownTimer += Time.deltaTime;
@@ -18,7 +25,8 @@ public class lilbro : MonoBehaviour
         {
             if (cooldownTimer >= attackCooldown)
             {
-                //attack
+                cooldownTimer = 0;
+                anim.SetTrigger("meleattack");
             }
         }
     }
