@@ -11,12 +11,17 @@ public class lilbro : MonoBehaviour
     private float cooldownTimer = Mathf.Infinity;
 
     private Animator anim;
-    private Health playerHealth; 
+    private Health playerHealth;
+
+
+    private enemyPatrol enemyPatrol;
 
     private void Awake()
     {
-        anim = GetComponent<Animator>(); 
+        anim = GetComponent<Animator>();
+        enemyPatrol = GetComponentInParent<enemyPatrol>();
     }
+
 
     private void Update()
     {
@@ -30,6 +35,8 @@ public class lilbro : MonoBehaviour
                 anim.SetTrigger("meleattack");
             }
         }
+        if (enemyPatrol != null)
+            enemyPatrol.enabled = !PlayerInsight();
     }
      private bool PlayerInsight()
      {
