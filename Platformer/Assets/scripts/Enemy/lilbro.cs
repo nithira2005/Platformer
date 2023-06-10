@@ -2,11 +2,16 @@ using UnityEngine;
 
 public class lilbro : MonoBehaviour
 {
+    [Header("Attack parameters")]
     [SerializeField] private float attackCooldown;
     [SerializeField] private float range;
-    [SerializeField] private float colliderDistance;
     [SerializeField] private int damage;
+
+    [Header("Collider parameters")]
+    [SerializeField] private float colliderDistance;
     [SerializeField]private BoxCollider2D boxCollider;
+
+    [Header("Player parameters")]
     [SerializeField] private LayerMask playerLayer;
     private float cooldownTimer = Mathf.Infinity;
 
