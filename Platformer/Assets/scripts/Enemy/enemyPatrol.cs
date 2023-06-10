@@ -12,10 +12,34 @@ public class enemyPatrol : MonoBehaviour
     [Header("Movement perameters")]
     [SerializeField] private float speed;
     private Vector3 initScale;
+    private bool movingLeft;
 
     private void Awake()
     {
         initScale = enemy.localScale;
+    }
+    private void Update()
+    {
+        if (movingLeft)
+        {
+            if(enemy.position.x >=leftEdge.position.x)
+            MoveInDirection(-1);
+            else
+               DirectionChange();
+            
+        }
+        else
+        {
+            if(enemy.position.x <= RightEdge.position.x)
+            MoveInDirection(1);
+            else
+                DirectionChange();
+            
+        }
+    }
+    private void DirectionChange()
+    {
+        movingLeft = !movingLeft;
     }
     private void MoveInDirection(int _direction)
     {
