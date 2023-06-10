@@ -5,6 +5,12 @@ public class EnemyProjectile : Enemydamage
     [SerializeField] private float speed;
     [SerializeField] private float resetTime;
     private float lifetime;
+    private Animator anim;
+
+    private void Awake()
+    {
+        anim = GetComponent<Animator>();
+    }
     public void ActivateProjectile()
     {
         lifetime = 0;
@@ -24,6 +30,16 @@ public class EnemyProjectile : Enemydamage
     private void OnTriggerEnter2D(Collider2D collision)
     {
         base.OnTriggerEnter2D(collision);
-        gameObject.SetActive(false); //deactivated the arrow
+        
+
+        if (anim != null)
+            anim.SetTrigger("explode");
+        else
+            gameObject.SetActive(false); //deactivated the arrow
+
+    }
+    private void Deactivate()
+    {
+        gameObject.SetActive(false);
     }
 }
