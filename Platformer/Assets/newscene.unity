@@ -7018,6 +7018,8 @@ MonoBehaviour:
   RightEdge: {fileID: 1521768511}
   enemy: {fileID: 1935157983}
   speed: 2
+  idleDuration: 1
+  anim: {fileID: 1935157987}
 --- !u!1 &1575273535
 GameObject:
   m_ObjectHideFlags: 0
@@ -8720,6 +8722,11 @@ SpriteRenderer:
 --- !u!4 &1935157983 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5551321522902850113, guid: eeb19211cb87fab49a7115af20448137, type: 3}
+  m_PrefabInstance: {fileID: 5551321522620264606}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1935157987 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5551321522902850173, guid: eeb19211cb87fab49a7115af20448137, type: 3}
   m_PrefabInstance: {fileID: 5551321522620264606}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1941994368
