@@ -37,7 +37,7 @@ public class lilbro : MonoBehaviour
         //attackwhen player on range
         if (PlayerInsight())
         {
-            if (cooldownTimer >= attackCooldown)
+            if (cooldownTimer >= attackCooldown && playerHealth.currentHealth > 0)
             {
                 cooldownTimer = 0;
                 anim.SetTrigger("meleattack");
