@@ -1438,7 +1438,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fea0f2a7c56ddfd4b841555751d2d6cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerHealth: {fileID: 0}
+  playerHealth: {fileID: 2997748575474200189}
   totalhealthBar: {fileID: 1232566634}
   currenthealthBar: {fileID: 2016003202}
 --- !u!1 &344630224
@@ -2098,6 +2098,63 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1306590621768077918, guid: b03cdf47b253f5f4184803077d5c3658, type: 3}
   m_PrefabInstance: {fileID: 120333520}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &531770566
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2581652549919224757, guid: db6706381be05a14db2e2a3c2aa6782c, type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2581652549919224757, guid: db6706381be05a14db2e2a3c2aa6782c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2581652549919224757, guid: db6706381be05a14db2e2a3c2aa6782c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2581652549919224757, guid: db6706381be05a14db2e2a3c2aa6782c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2581652549919224757, guid: db6706381be05a14db2e2a3c2aa6782c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2581652549919224757, guid: db6706381be05a14db2e2a3c2aa6782c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2581652549919224757, guid: db6706381be05a14db2e2a3c2aa6782c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2581652549919224757, guid: db6706381be05a14db2e2a3c2aa6782c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2581652549919224757, guid: db6706381be05a14db2e2a3c2aa6782c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2581652549919224757, guid: db6706381be05a14db2e2a3c2aa6782c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2581652549919224757, guid: db6706381be05a14db2e2a3c2aa6782c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2581652549919224758, guid: db6706381be05a14db2e2a3c2aa6782c, type: 3}
+      propertyPath: m_Name
+      value: MeleeEnemy
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: db6706381be05a14db2e2a3c2aa6782c, type: 3}
 --- !u!1 &532988253
 GameObject:
   m_ObjectHideFlags: 0
@@ -4353,6 +4410,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1037695371}
   - component: {fileID: 1037695370}
+  - component: {fileID: 1037695372}
   m_Layer: 0
   m_Name: SoundManager
   m_TagString: Untagged
@@ -4371,7 +4429,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -4471,6 +4529,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1037695372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1037695369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d6abfd3746b5634d820423141a7499d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1070435828
 GameObject:
   m_ObjectHideFlags: 0
@@ -10141,6 +10211,7 @@ MonoBehaviour:
   components:
   - {fileID: 2997748575474200191}
   - {fileID: 2997748575474200185}
+  deathSound: {fileID: 8300000, guid: 196253a479c030e4aab9d92d859b47e2, type: 3}
 --- !u!4 &2997748575474200190
 Transform:
   m_ObjectHideFlags: 0
@@ -10182,3 +10253,4 @@ MonoBehaviour:
   - {fileID: 2044840494}
   - {fileID: 1223569139}
   - {fileID: 473521033}
+  fireballSound: {fileID: 8300000, guid: a92035ba284009947b6e5ca3609e765d, type: 3}

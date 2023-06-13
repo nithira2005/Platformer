@@ -18,6 +18,9 @@ public class Health : MonoBehaviour
     [SerializeField]private Behaviour[] components;
     private bool invunerable;
 
+    [Header("Death sound")]
+    [SerializeField] private AudioClip deathSound;
+
     private void Awake()
     {
         currentHealth = startingHealth;
@@ -46,6 +49,7 @@ public class Health : MonoBehaviour
                 
 
                 dead = true;
+                soundManager.instance.PlaySound(deathSound);
             }
         }
     }
