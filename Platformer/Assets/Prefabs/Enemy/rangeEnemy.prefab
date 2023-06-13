@@ -301,6 +301,7 @@ MonoBehaviour:
   playerLayer:
     serializedVersion: 2
     m_Bits: 1024
+  fireballSound: {fileID: 8300000, guid: a92035ba284009947b6e5ca3609e765d, type: 3}
 --- !u!1 &5542731467862963892
 GameObject:
   m_ObjectHideFlags: 0

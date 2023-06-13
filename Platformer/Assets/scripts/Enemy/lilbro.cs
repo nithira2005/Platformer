@@ -15,6 +15,9 @@ public class lilbro : MonoBehaviour
     [SerializeField] private LayerMask playerLayer;
     private float cooldownTimer = Mathf.Infinity;
 
+    [Header("Attack sound")]
+    [SerializeField] private AudioClip attackSound;
+
     private Animator anim;
     private Health playerHealth;
 
@@ -38,6 +41,7 @@ public class lilbro : MonoBehaviour
             {
                 cooldownTimer = 0;
                 anim.SetTrigger("meleattack");
+                soundManager.instance.PlaySound(attackSound);
             }
         }
         if (enemyPatrol != null)
