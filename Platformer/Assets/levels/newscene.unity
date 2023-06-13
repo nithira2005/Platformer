@@ -10284,7 +10284,7 @@ MonoBehaviour:
   components:
   - {fileID: 2997748575474200191}
   - {fileID: 2997748575474200185}
-  deathSound: {fileID: 8300000, guid: 180d831ffd53a7d4980728a4a5674b2e, type: 3}
+  deathSound: {fileID: 8300000, guid: ae2b04d83102f9844b5fd0fd02d05c67, type: 3}
   hurtSound: {fileID: 8300000, guid: b415b1afd201d364a93272ef99c65257, type: 3}
 --- !u!4 &2997748575474200190
 Transform:
