@@ -10,6 +10,14 @@ public class soundManager : MonoBehaviour
     {
         instance = this; 
         source = GetComponent<AudioSource>();
+        //keep this object
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else if (instance != null && instance != this)
+            Destroy(gameObject);
     }
     public void PlaySound(AudioClip _sound)
     {
