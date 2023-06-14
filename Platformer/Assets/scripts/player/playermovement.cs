@@ -22,6 +22,10 @@ public class playermovement : MonoBehaviour
     [SerializeField] private int extraJumps;
     private int jumpCounter;
 
+    [Header("Wall Jump")]
+    [SerializeField] private float wallJumpX;//horizontal force
+    [SerializeField] private float wallJumpY;//vertical force
+
     [Header("Jump sound")]
     [SerializeField] private AudioClip jumpSound;
 
@@ -104,7 +108,8 @@ public class playermovement : MonoBehaviour
     }
     private void wallJump()
     {
-
+        body.AddForce(new Vector2(-Mathf.Sign(transform.localScale.x) * wallJumpX, wallJumpY));
+        wallJumpCooldown = 0;
     }
     private bool isGrounded()
     {
