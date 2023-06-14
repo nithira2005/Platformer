@@ -37,29 +37,24 @@ public class playermovement : MonoBehaviour
         anim.SetBool("run", horizontalInput != 0);
         anim.SetBool("grounded", isGrounded());
 
-        //wall jumping logic
-        if (wallJumpCooldown > 0.2f)
+        //jump
+        if (Input.GetKeyDown(KeyCode.Space))
+            Jump();
+
+        //adjustable jump height
+        if (Input.GetKeyUp(KeyCode.Space) && body.velocity.y > 0)
+            body.velocity = new Vector2(body.velocity.x, body.velocity.y / 2);
+
+        if (onWall())
         {
-
-            body.velocity = new Vector2(horizontalInput * speed, body.velocity.y);
-
-            if (onWall() && !isGrounded())
-            {
-                body.gravityScale = 0;
-                body.velocity = Vector2.zero;
-            }
-            else
-                body.gravityScale = 7;
-            if (Input.GetKey(KeyCode.Space))
-            {
-                Jump();
-                if(Input.GetKeyDown(KeyCode.Space)&& isGrounded())
-                    soundManager.instance.PlaySound(jumpSound);
-            }
-                
+            body.gravityScale = 0;
+            body.velocity = Vector2.zero;
         }
         else
-            wallJumpCooldown += Time.deltaTime;
+        {
+            body.gravityScale = 7;
+            body.velocity = new Vector2(horizontalInput * speed, body.velocity.y);
+        }
     }
     private void Jump()
     {
@@ -67,7 +62,7 @@ public class playermovement : MonoBehaviour
         {
             
             body.velocity = new Vector2(body.velocity.x, jumpPower);
-            anim.SetTrigger("Jump");
+            soundManager.instance.PlaySound(jumpSound);
         }
         else if (onWall() && !isGrounded())
         {
