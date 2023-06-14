@@ -10307,6 +10307,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   coyoteTime: 0.25
+  extraJumps: 1
   jumpSound: {fileID: 8300000, guid: 126c38cd3ac776145a9ec37888ed38c5, type: 3}
 --- !u!50 &2997748575474200186
 Rigidbody2D:

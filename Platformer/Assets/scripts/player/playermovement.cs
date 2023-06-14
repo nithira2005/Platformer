@@ -17,6 +17,11 @@ public class playermovement : MonoBehaviour
     [SerializeField] private float coyoteTime;
     private float coyoteCounter;
 
+
+    [Header("Multiple Jumps")]
+    [SerializeField] private int extraJumps;
+    private int jumpCounter;
+
     [Header("Jump sound")]
     [SerializeField] private AudioClip jumpSound;
 
@@ -62,6 +67,7 @@ public class playermovement : MonoBehaviour
             if (isGrounded())
             {
                 coyoteCounter = coyoteTime;
+                jumpCounter = extraJumps;
             }
             else
                 coyoteCounter -= Time.deltaTime;
@@ -69,7 +75,7 @@ public class playermovement : MonoBehaviour
     }
     private void Jump()
     {
-        if (coyoteCounter < 0 && !onWall()) return;
+        if (coyoteCounter < 0 && !onWall() && jumpCounter <= 0) return;
 
         soundManager.instance.PlaySound(jumpSound);
 
@@ -83,6 +89,14 @@ public class playermovement : MonoBehaviour
             {
                 if (coyoteCounter > 0)
                     body.velocity = new Vector2(body.velocity.x, jumpPower);
+                else
+                {
+                    if (jumpCounter > 0)
+                    {
+                        body.velocity = new Vector2(body.velocity.x, jumpPower);
+                        jumpCounter--;
+                    }
+                }
             }
             coyoteCounter = 0;
         }
