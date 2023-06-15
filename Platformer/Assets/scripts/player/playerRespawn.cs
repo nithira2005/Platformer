@@ -6,10 +6,12 @@ public class playerRespawn : MonoBehaviour
     [SerializeField] private AudioClip checkpointSound;
     private Transform currentCheckpoint;
     private Health playerHealth;
+    private uiManager uiManager;
 
     private void Awake()
     {
         playerHealth = GetComponent<Health>();
+        uiManager = FindObjectOfType<uiManager>();
     }
 
 
@@ -17,6 +19,8 @@ public class playerRespawn : MonoBehaviour
     {
         if (currentCheckpoint == null)
         {
+            //Show game overscreen
+            uiManager.GameOver();
             return;
         }
         transform.position = currentCheckpoint.position;
