@@ -13,8 +13,12 @@ public class playerRespawn : MonoBehaviour
     }
 
 
-    public void Respawn()
+    public void CheckRespawn()
     {
+        if (currentCheckpoint == null)
+        {
+            return;
+        }
         transform.position = currentCheckpoint.position;
         playerHealth.Respawn();
 
