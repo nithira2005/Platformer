@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class selectionArrow : MonoBehaviour
 {
@@ -7,6 +8,7 @@ public class selectionArrow : MonoBehaviour
     [SerializeField] private AudioClip interactSound;
     private RectTransform rect;
     private int currentPostition;
+    
 
     private void Awake()
     {
@@ -14,11 +16,14 @@ public class selectionArrow : MonoBehaviour
     }
 
     private void Update()
-    {
+    {// selection arrow move
         if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
             ChangePosition(-1);
         if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
             ChangePosition(1);
+        // interact
+        if (Input.GetKeyDown(KeyCode.KeypadEnter) || Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.Return))
+            Interact();
     }
 
 
@@ -39,4 +44,12 @@ public class selectionArrow : MonoBehaviour
         //assign the y pos yo current pos to arrow
         rect.position = new Vector3(rect.position.x, options[currentPostition].position.y, 0);
     }
+     private void Interact()
+    {
+        soundManager.instance.PlaySound(interactSound);
+
+        // access button
+        options[currentPostition].GetComponent<Button>().onClick.Invoke();
+    }
+
 }
