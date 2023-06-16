@@ -37,13 +37,20 @@ public class soundManager : MonoBehaviour
             currentVolume = 1;
         source.volume = currentVolume;
 
-        PlayerPrefs.SetFloat("soundVolume", currentVolume);
+        PlayerPrefs.SetFloat("soundVolume", currentVolume); 
     }
 
     public void ChangeMusicVolume(float _change)
     {
-        float currentVolume = 1;
+        float currentVolume = PlayerPrefs.GetFloat("musicVolume");
         currentVolume += _change;
+
+        if (currentVolume > 1)
+            currentVolume = 0;
+        else if (currentVolume < 0)
+            currentVolume = 1;
         musicSource.volume = currentVolume;
+
+        PlayerPrefs.SetFloat("musicVolume", currentVolume);
     }
 }

@@ -70,7 +70,7 @@ public class uiManager : MonoBehaviour
     }
     public void musicVol()
     {
-
+        soundManager.instance.ChangeMusicVolume(0.2f);
     }
     #endregion
 }
