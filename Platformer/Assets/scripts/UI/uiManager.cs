@@ -56,7 +56,7 @@ public class uiManager : MonoBehaviour
 
 
     #region
-    private void PauseGame(bool status)
+    public void PauseGame(bool status)
     {
         pauseScreen.SetActive(status);
         if (status)
