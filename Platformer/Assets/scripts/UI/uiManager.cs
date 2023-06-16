@@ -64,11 +64,11 @@ public class uiManager : MonoBehaviour
         else
             Time.timeScale = 1;
     }
-    public void soundVol()
+    public void soundVolume()
     {
         soundManager.instance.ChangeSoundVolume(0.2f);
     }
-    public void musicVol()
+    public void musicVolume()
     {
         soundManager.instance.ChangeMusicVolume(0.2f);
     }
