@@ -3,15 +3,27 @@ using UnityEngine.SceneManagement;
 
 public class uiManager : MonoBehaviour
 {
-
+    [Header("Game over")]
    [SerializeField] private GameObject gameOverScreen;
    [SerializeField]private AudioClip gameOverSound;
 
+    [Header("Pause")]
+    [SerializeField] private GameObject pauseScreen;
     private void Awake()
     {
         gameOverScreen.SetActive(false);
     }
-
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (pauseScreen.activeInHierarchy)
+                PauseGame(false);
+            else
+                PauseGame(true);
+        }
+    }
+    #region gameover
     //game overscreen activation
     public void GameOver()
     {
@@ -33,6 +45,20 @@ public class uiManager : MonoBehaviour
     public void Quit()
     {
         Application.Quit();
+
+      #if UNITY_EDITOR
+
+        UnityEditor.EditorApplication.isPlaying = false;
+      #endif
     }
+    #endregion
+
+
+    #region
+    private void PauseGame(bool status)
+    {
+        pauseScreen.SetActive(status);
+    }
+    #endregion
 }
- 
+
