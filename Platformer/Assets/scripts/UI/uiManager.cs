@@ -12,6 +12,7 @@ public class uiManager : MonoBehaviour
     private void Awake()
     {
         gameOverScreen.SetActive(false);
+        pauseScreen.SetActive(false);
     }
     private void Update()
     {
@@ -58,6 +59,10 @@ public class uiManager : MonoBehaviour
     private void PauseGame(bool status)
     {
         pauseScreen.SetActive(status);
+        if (status)
+            Time.timeScale = 0;
+        else
+            Time.timeScale = 1;
     }
     #endregion
 }
