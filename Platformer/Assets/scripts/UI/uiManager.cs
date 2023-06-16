@@ -64,6 +64,14 @@ public class uiManager : MonoBehaviour
         else
             Time.timeScale = 1;
     }
+    public void soundVol()
+    {
+        soundManager.instance.ChangeSoundVolume(0.2f);
+    }
+    public void musicVol()
+    {
+
+    }
     #endregion
 }
 

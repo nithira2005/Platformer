@@ -2184,7 +2184,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -376, y: 12.649597}
+  m_AnchoredPosition: {x: -376, y: 112}
   m_SizeDelta: {x: 185.9818, y: 103.5045}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &367949350
@@ -5403,7 +5403,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 547408458}
         m_TargetAssemblyTypeName: uiManager, Assembly-CSharp
-        m_MethodName: Restart
+        m_MethodName: soundVol
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8036,7 +8036,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 547408458}
         m_TargetAssemblyTypeName: uiManager, Assembly-CSharp
-        m_MethodName: Restart
+        m_MethodName: musicVol
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
