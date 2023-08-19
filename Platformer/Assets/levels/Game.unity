@@ -5038,6 +5038,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.5
+  player: {fileID: 2997748575474200190}
+  aheadDistance: 3
+  cameraSpeed: 4
 --- !u!81 &542096734
 AudioListener:
   m_ObjectHideFlags: 0
